@@ -4,7 +4,7 @@
 const int zero_cross_pin  = 2;
 const int lamp_pin  = 3;
 const int MIN_POWER  = 0;
-const int MAX_POWER  = 30;
+const int MAX_POWER  = 56;
 dimmerLamp lamp(lamp_pin);
  
 
@@ -12,18 +12,21 @@ void Serial_Setup_Reply();
 void Dimmer_Setup();
 int Read_Serial();
 void Set_Intensity(int intensity);
+void Arduino_Testing();
 
 
 
 void setup() {
-  Serial_Setup_Reply();
+  //Serial_Setup_Reply();
   Dimmer_Setup();
+  
 }
 
 
 //Change LED's intensity according to recieved intensity value
 void loop() {
-  Set_Intensity(Read_Serial());
+  Set_Intensity(100);
+  //Set_Intensity(Read_Serial());
 }
 
 
@@ -69,4 +72,13 @@ int Read_Serial(){
 void Set_Intensity(int intensity){
   intensity = map(intensity,0,100,MIN_POWER,MAX_POWER);
   lamp.setPower(intensity);
+}
+
+
+//Quick Built in LED blinking testing
+void Arduino_Testing(){
+  digitalWrite(13,HIGH);
+  delay(1000);
+  digitalWrite(13,LOW);
+  delay(1000);
 }
