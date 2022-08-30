@@ -1,0 +1,4 @@
+Copy this to Command line to start the NFC scanner
+
+ /bin/python3 "/home/electronics-team/halter/Solar-Test-Jig/Halter-Solar-Jig/Python Master/NFC-scanner/cr95_nfc_scanner/cr95hf.py"
+

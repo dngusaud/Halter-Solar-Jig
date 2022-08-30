@@ -17,7 +17,7 @@ void Arduino_Testing();
 
 
 void setup() {
-  //Serial_Setup_Reply();
+  Serial_Setup_Reply();
   Dimmer_Setup();
   
 }
@@ -25,8 +25,8 @@ void setup() {
 
 //Change LED's intensity according to recieved intensity value
 void loop() {
-  Set_Intensity(100);
-  //Set_Intensity(Read_Serial());
+  //Set_Intensity(100);
+  Set_Intensity(Read_Serial());
 }
 
 
@@ -56,7 +56,7 @@ void Serial_Setup_Reply(){
   Serial.begin(115200);
   Serial.setTimeout(1);
   if(Serial.available()){
-    Serial.print("Arduino Ready");
+    //Serial.print(100);
   }
 }
 
